@@ -1,0 +1,72 @@
+@use "./../../scss/var.scss" as var;
+
+.games {
+  @extend %container;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  @media (max-width: var.$tablet_breakpoint) {
+    gap: 32px;
+    flex-direction: column-reverse;
+  }
+  &__holder {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    width: 100%;
+    max-width: 844px;
+    height: 100%;
+    transition: all 0.3s ease;
+
+    @media (max-width: var.$mobile_breakpoint) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: var.$mobile_breakpoint) {
+      &__2 {
+        grid-template-columns: 1fr 1fr;
+      }
+      &__3 {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      &__4 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
+  }
+  &__filters {
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid #f2f2f2;
+    border-radius: 8px;
+    padding: 32px;
+    max-width: 412px;
+    width: 100%;
+
+    @media (max-width: var.$tablet_breakpoint) {
+      max-width: 100%;
+    }
+  }
+  &__game {
+    width: 100%;
+    padding-top: 75%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-size: cover;
+    height: 0;
+    position: relative;
+    span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      background-color: #fdbc11;
+      z-index: -1;
+      top: 0;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      text-align: center;
+    }
+  }
+}

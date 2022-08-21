@@ -1,0 +1,22 @@
+POST http://localhost:4000/games
+JWT: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicGxheWVyMiIsInBhc3N3b3JkIjoicGxheWVyMiIsImlhdCI6MTY2MDg1ODU4M30.zsqEJl_17ETaCjv28US_xxl7lBCue5lnWrxuS0lQvRM
+Username: player2
+
+
+###
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "name": "player2",
+    "password": "player2"
+}
+
+###
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "name": "player2",
+    "password": "player2"
+}

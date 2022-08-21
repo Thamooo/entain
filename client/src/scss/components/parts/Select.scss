@@ -1,0 +1,32 @@
+@use "./../../var.scss" as var;
+
+.select {
+  padding: 10px;
+  &__title {
+    color: #808080;
+    line-height: 120%;
+    margin-bottom: 10px;
+  }
+  &__indicator,
+  &__control {
+    display: none;
+  }
+
+  &__option {
+    overscroll-behavior: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    line-height: 120%;
+    padding: 5px 10px;
+    &--is-selected {
+      background: #fdbc11;
+    }
+  }
+
+  &__menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}

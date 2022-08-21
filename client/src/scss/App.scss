@@ -1,0 +1,11 @@
+.app {
+  min-height: 100vh;
+  width: 100%;
+  padding-bottom: 94px;
+
+  &__login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

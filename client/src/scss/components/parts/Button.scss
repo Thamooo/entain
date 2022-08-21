@@ -1,0 +1,70 @@
+@use "./../../var.scss" as var;
+
+.btn {
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  border: 0px;
+  cursor: pointer;
+  justify-content: center;
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 8px;
+  }
+
+  &__plain {
+    padding: 11.5px 38.5px;
+    box-shadow: 0px -2px 18px rgba(128, 128, 128, 0.1);
+    border-radius: 4px;
+    background: white;
+    span {
+      transition: opacity 0.3s ease;
+      opacity: 0.7;
+    }
+    &:hover {
+      span {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__danger {
+    padding: 0;
+    background: none;
+    span {
+      line-height: 1;
+      color: var.$button_danger_color;
+    }
+  }
+
+  &__default {
+    background: var.$button_default_bg;
+    padding: var.$button_default_padding;
+    transition: var.$button_default_transition;
+    &:not([disabled]) {
+      &:hover {
+        transform: var.$button_default_animation_transform;
+      }
+    }
+  }
+
+  &__spinner {
+    display: inline-flex;
+    animation-name: rotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: center center;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

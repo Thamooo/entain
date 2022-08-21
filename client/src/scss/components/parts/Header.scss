@@ -1,0 +1,54 @@
+@use "./../../var.scss" as var;
+
+.header {
+  background: #fdfdfd;
+  box-shadow: 0px -2px 18px rgba(128, 128, 128, 0.1);
+  margin-bottom: 75px;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  @media (max-width: var.$tablet_breakpoint) {
+    box-shadow: none;
+    margin-bottom: 27px;
+  }
+  &__container {
+    @extend %container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 344px) {
+      gap: 20px;
+      flex-direction: column;
+    }
+
+    @media (max-width: var.$tablet_breakpoint) {
+      padding-top: 12px;
+    }
+  }
+
+  &__logo {
+    display: inline-flex;
+    height: 70px;
+    width: 70px;
+    align-items: center;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 41.5px;
+
+    @media (max-width: var.$mobile_breakpoint) {
+      gap: 31.5px;
+    }
+    @media (max-width: 248px) {
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@use "./../../var.scss" as var;
+.filters {
+  height: 100%;
+  &__collapse {
+    cursor: pointer;
+    @media (min-width: var.$mobile_breakpoint) {
+      display: none;
+    }
+  }
+  &__wrapper {
+    transition: max-height 1s ease-in-out;
+    max-height: 1000px;
+    overflow: hidden;
+    &__hide {
+      @media (max-width: var.$mobile_breakpoint) {
+        max-height: 0px;
+      }
+    }
+    & > * {
+      margin-top: 32px;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    @media (max-width: var.$mobile_breakpoint) {
+      justify-content: center;
+      gap: 20px;
+    }
+    &-counter {
+      text-align: center;
+      opacity: 0.7;
+    }
+  }
+  &__collapse {
+    text-align: center;
+    margin-top: 32px;
+    span {
+      color: #3f53be;
+      img {
+        margin-right: 8px;
+      }
+    }
+  }
+}

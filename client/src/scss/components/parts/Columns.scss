@@ -1,0 +1,45 @@
+@use "./../../var.scss" as var;
+.columns {
+  @media (max-width: var.$mobile_breakpoint) {
+    display: none;
+  }
+  &__title {
+    color: #808080;
+    line-height: 120%;
+    margin-bottom: 10px;
+  }
+  &__select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    &__item {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      &-selected {
+        div {
+          background: #fdbc11;
+        }
+      }
+      &-num {
+        min-width: 24px;
+        min-height: 24px;
+        border-radius: 100%;
+        background-color: #f2f2f2;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &-line {
+        transform: translate(-92%, 0);
+        position: absolute;
+        background-color: #f2f2f2;
+        width: 50%;
+        border-radius: 50px;
+        height: 15px;
+        z-index: -1;
+      }
+    }
+  }
+}
